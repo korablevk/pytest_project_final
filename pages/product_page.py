@@ -16,8 +16,9 @@ class BasketPage(BasePage):
         title = self.browser.find_element(*CatalogPageLocators.TITLE_NAME)
         a_price = self.browser.find_element(*CatalogPageLocators.MESSAGE_PRICE)
         price = self.browser.find_element(*CatalogPageLocators.TITLE_PRICE)
-        assert title.text in a_message.text, "Ошибка"
-        assert a_price.text == price.text, "Ошибка"
+        busket_price = self.browser.find_element(*CatalogPageLocators.BASKET_PRICE).text
+        assert title.text == a_message.text, "Ошибка"
+        assert a_price.text == price.text == busket_price[14:-12], "Ошибка"
         print("Succed")
 
 
