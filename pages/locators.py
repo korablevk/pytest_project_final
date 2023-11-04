@@ -20,6 +20,6 @@ class CatalogPageLocators():
     BASKET_PRICE = (By.CSS_SELECTOR, ".basket-mini.pull-right.hidden-xs")
     TITLE_NAME = (By.CSS_SELECTOR, "h1:nth-child(1)")
     TITLE_PRICE = (By.CSS_SELECTOR, "p.price_color")
-
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert-success")
 
 
