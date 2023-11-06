@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 import time
 
 
-class BasketPage(BasePage):
+class ProductPage(BasePage):
 
     def add_to_basket(self):
         link = self.browser.find_element(*CatalogPageLocators.ADD_TO_BASKET)
@@ -20,10 +20,6 @@ class BasketPage(BasePage):
         assert title.text == a_message.text, "Ошибка"
         assert a_price.text == price.text == busket_price[14:-12], "Ошибка"
         print("Succed")
-
-    def should_be_empty_basket(self):
-        time.sleep(3)
-        assert self.is_element_equal(*CatalogPageLocators.CURRENT_PRICE, ' 0,00 £ '), "No message that basket is empty"
 
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*CatalogPageLocators.SUCCESS_MESSAGE), "Success message is presented, but should not be"
